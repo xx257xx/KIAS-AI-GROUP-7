@@ -13,6 +13,10 @@ def pol2cart(rho, phi):
     y = rho * np.sin(phi)
     return(x, y)
 
+def soft_weight(bdry, eps):
+    return (1-bdry/eps)*(np.abs(bdry)<eps)
+
+
 # is_star <0 means inside star, >0 outside star
 def is_star(x,y) :
     n = 5
